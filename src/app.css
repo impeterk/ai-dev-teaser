@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        scrollbar-gutter: auto !important;
+      }
+    html, body, .app {
+        min-width: 0;
+        height: 100%;
+    }
+}

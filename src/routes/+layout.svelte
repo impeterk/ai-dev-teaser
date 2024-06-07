@@ -1,22 +1,26 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import '../app.css';
+	import Header from './header.svelte';
+	import SidePanel from './side-panel.svelte';
+	import {drawer} from '$lib/stores'
+	
 </script>
 
-
-	<div class="drawer lg:drawer-open">
-		<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-		<div class="drawer-content flex flex-col items-center justify-center">
+<div class="app">
+	<div class="drawer h-full" class:lg:drawer-open={String($page.url).includes('dashboard')}>
+		<input id="main-layout-drawer" bind:this={$drawer} type="checkbox" class="drawer-toggle" />
+		<div class="drawer-content">
+			<Header />
 			<slot />
-			<label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 		</div>
-		<div class="drawer-side">
-			<label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-			<ul class="menu min-h-full w-full max-w-64 bg-base-200 p-4 text-base-content">
-				<!-- Sidebar content here -->
-			<li><a href="#item-1"> Sidebar Item 1 </a></li>
-			<li><a href="#item-2">Sidebar Item 2</a></li>
-		</ul>
+		<SidePanel />
 	</div>
 </div>
 
-<style></style>
+<style>
+	.drawer-content {
+		display: grid;
+		grid-template-rows: auto 1fr;
+	}
+</style>
