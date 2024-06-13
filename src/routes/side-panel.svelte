@@ -15,7 +15,7 @@ import { LogOut } from "lucide-svelte";
             <Navigation />
         </ul>
 
-            <button class="btn btn-ghost mt-auto hidden lg:flex">
+            <button class="btn btn-ghost mt-auto hidden lg:flex rounded-none">
                 <LogOut />
                 Sign Out
             </button>

@@ -1,163 +1,172 @@
 <script lang="ts">
 	import { page } from "$app/stores";
+	import { Check, ChevronDown, Search } from "lucide-svelte";
 
 </script>
 
 
-<section class="bg-primary-content">
-    <pre>
-
-    {JSON.stringify($page, null, 2)}
-    </pre>
-    <div class="overflow-x-auto w-full p-6 bg-base-100">
-        <table class="table w-full" >
-          <!-- head -->
-          <thead>
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" class="checkbox" />
-                </label>
-              </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- row 1 -->
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" class="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div class="flex items-center gap-3">
-                  <div class="avatar">
-                    <div class="mask mask-squircle w-12 h-12">
-                      <img src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                    </div>
-                  </div>
-                  <div>
-                    <div class="font-bold">Hart Hagerty</div>
-                    <div class="text-sm opacity-50">United States</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Zemlak, Daniel and Leannon
-                <br/>
-                <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
-              </td>
-              <td>Purple</td>
-              <th>
-                <button class="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
-            <!-- row 2 -->
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" class="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div class="flex items-center gap-3">
-                  <div class="avatar">
-                    <div class="mask mask-squircle w-12 h-12">
-                      <img src="https://img.daisyui.com/tailwind-css-component-profile-3@56w.png" alt="Avatar Tailwind CSS Component" />
-                    </div>
-                  </div>
-                  <div>
-                    <div class="font-bold">Brice Swyre</div>
-                    <div class="text-sm opacity-50">China</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Carroll Group
-                <br/>
-                <span class="badge badge-ghost badge-sm">Tax Accountant</span>
-              </td>
-              <td>Red</td>
-              <th>
-                <button class="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
-            <!-- row 3 -->
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" class="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div class="flex items-center gap-3">
-                  <div class="avatar">
-                    <div class="mask mask-squircle w-12 h-12">
-                      <img src="https://img.daisyui.com/tailwind-css-component-profile-4@56w.png" alt="Avatar Tailwind CSS Component" />
-                    </div>
-                  </div>
-                  <div>
-                    <div class="font-bold">Marjy Ferencz</div>
-                    <div class="text-sm opacity-50">Russia</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Rowe-Schoen
-                <br/>
-                <span class="badge badge-ghost badge-sm">Office Assistant I</span>
-              </td>
-              <td>Crimson</td>
-              <th>
-                <button class="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
-            <!-- row 4 -->
-            <tr>
-              <th>
-                <label>
-                  <input type="checkbox" class="checkbox" />
-                </label>
-              </th>
-              <td>
-                <div class="flex items-center gap-3">
-                  <div class="avatar">
-                    <div class="mask mask-squircle w-12 h-12">
-                      <img src="https://img.daisyui.com/tailwind-css-component-profile-5@56w.png" alt="Avatar Tailwind CSS Component" />
-                    </div>
-                  </div>
-                  <div>
-                    <div class="font-bold">Yancy Tear</div>
-                    <div class="text-sm opacity-50">Brazil</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Wyman-Ledner
-                <br/>
-                <span class="badge badge-ghost badge-sm">Community Outreach Specialist</span>
-              </td>
-              <td>Indigo</td>
-              <th>
-                <button class="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
-          </tbody>
-          <!-- foot -->
-          <tfoot>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
-            </tr>
-          </tfoot>
-          
-        </table>
-      </div>
+<section class="py-8 max-h-full bg-primary-content/60 rounded-xl">
+  <header class=" px-4">
+    <nav class="navbar bg-primary rounded-xl shadow-lg grid grid-cols-6 px-4">
+      <button class="btn btn-ghost no-animate text-neutral-content text-xl min-h-0">Name</button>
+      <button class="btn btn-ghost no-animate text-neutral-content  text-xl min-h-0 col-start-3">Last Scan</button>
+      <button class="btn btn-ghost no-animate text-neutral-content  text-xl min-h-0 ">Status</button>
+      <label class="input input-bordered flex items-center gap-2 pl-2 input-md col-start-6 input-sm">
+        <Search class="size-5"/>
+        <input type="text" placeholder="Search" class="grow" />
+      </label>
+    </nav>
+  </header>
+  <main class="px-8 pt-8">
+    <ul class="flex flex-col w-full gap-8">
+      <li class="card card-bordered bg-base-100 shadow-lg">
+        <div class="card-body grid grid-cols-6 py-2 place-items-center">
+          <!-- col-1-&-2 -->
+          <div class="card-title col-span-2 w-full text-primary font-semibold">https://peterk.dev</div>
+          <!-- col-3 -->
+          <div class="stat-title col-start-3">13.6.2024</div>
+          <!-- col-4 -->
+          <div class="badge badge-success badge-lg self-center place-self-center size-6 p-0.5 shadow-md shadow-success"><Check class="text-success-content size-6" /></div>
+          <!-- col-5 -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn m-1 btn-ghost text-lg">See more <ChevronDown /></div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+          <!-- col-6 -->
+           <a href="/dashboard/domainId" class="btn btn-primary btn-lg min-h-fit h-fit py-3">Inspect</a>
+        </div>
+      </li>
+      <li class="card card-bordered bg-base-100 shadow-lg">
+        <div class="card-body grid grid-cols-6 py-2 place-items-center">
+          <!-- col-1-&-2 -->
+          <div class="card-title col-span-2 w-full text-primary font-semibold">https://peterk.dev</div>
+          <!-- col-3 -->
+          <div class="stat-title col-start-3">13.6.2024</div>
+          <!-- col-4 -->
+          <div class="badge badge-success badge-lg self-center place-self-center size-6 p-0.5 shadow-md shadow-success"><Check class="text-success-content size-6" /></div>
+          <!-- col-5 -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn m-1 btn-ghost text-lg">See more <ChevronDown /></div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+          <!-- col-6 -->
+           <a href="/dashboard/domainId" class="btn btn-primary btn-lg min-h-fit h-fit py-3">Inspect</a>
+        </div>
+      </li>
+      <li class="card card-bordered bg-base-100 shadow-lg">
+        <div class="card-body grid grid-cols-6 py-2 place-items-center">
+          <!-- col-1-&-2 -->
+          <div class="card-title col-span-2 w-full text-primary font-semibold">https://peterk.dev</div>
+          <!-- col-3 -->
+          <div class="stat-title col-start-3">13.6.2024</div>
+          <!-- col-4 -->
+          <div class="badge badge-success badge-lg self-center place-self-center size-6 p-0.5 shadow-md shadow-success"><Check class="text-success-content size-6" /></div>
+          <!-- col-5 -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn m-1 btn-ghost text-lg">See more <ChevronDown /></div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+          <!-- col-6 -->
+           <a href="/dashboard/domainId" class="btn btn-primary btn-lg min-h-fit h-fit py-3">Inspect</a>
+        </div>
+      </li>
+      <li class="card card-bordered bg-base-100 shadow-lg">
+        <div class="card-body grid grid-cols-6 py-2 place-items-center">
+          <!-- col-1-&-2 -->
+          <div class="card-title col-span-2 w-full text-primary font-semibold">https://peterk.dev</div>
+          <!-- col-3 -->
+          <div class="stat-title col-start-3">13.6.2024</div>
+          <!-- col-4 -->
+          <div class="badge badge-success badge-lg self-center place-self-center size-6 p-0.5 shadow-md shadow-success"><Check class="text-success-content size-6" /></div>
+          <!-- col-5 -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn m-1 btn-ghost text-lg">See more <ChevronDown /></div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+          <!-- col-6 -->
+           <a href="/dashboard/domainId" class="btn btn-primary btn-lg min-h-fit h-fit py-3">Inspect</a>
+        </div>
+      </li>
+      <li class="card card-bordered bg-base-100 shadow-lg">
+        <div class="card-body grid grid-cols-6 py-2 place-items-center">
+          <!-- col-1-&-2 -->
+          <div class="card-title col-span-2 w-full text-primary font-semibold">https://peterk.dev</div>
+          <!-- col-3 -->
+          <div class="stat-title col-start-3">13.6.2024</div>
+          <!-- col-4 -->
+          <div class="badge badge-success badge-lg self-center place-self-center size-6 p-0.5 shadow-md shadow-success"><Check class="text-success-content size-6" /></div>
+          <!-- col-5 -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn m-1 btn-ghost text-lg">See more <ChevronDown /></div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+          <!-- col-6 -->
+           <a href="/dashboard/domainId" class="btn btn-primary btn-lg min-h-fit h-fit py-3">Inspect</a>
+        </div>
+      </li>
+      <li class="card card-bordered bg-base-100 shadow-lg">
+        <div class="card-body grid grid-cols-6 py-2 place-items-center">
+          <!-- col-1-&-2 -->
+          <div class="card-title col-span-2 w-full text-primary font-semibold">https://peterk.dev</div>
+          <!-- col-3 -->
+          <div class="stat-title col-start-3">13.6.2024</div>
+          <!-- col-4 -->
+          <div class="badge badge-success badge-lg self-center place-self-center size-6 p-0.5 shadow-md shadow-success"><Check class="text-success-content size-6" /></div>
+          <!-- col-5 -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn m-1 btn-ghost text-lg">See more <ChevronDown /></div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+          <!-- col-6 -->
+           <a href="/dashboard/domainId" class="btn btn-primary btn-lg min-h-fit h-fit py-3">Inspect</a>
+        </div>
+      </li>
+      <li class="card card-bordered bg-base-100 shadow-lg">
+        <div class="card-body grid grid-cols-6 py-2 place-items-center">
+          <!-- col-1-&-2 -->
+          <div class="card-title col-span-2 w-full text-primary font-semibold">https://peterk.dev</div>
+          <!-- col-3 -->
+          <div class="stat-title col-start-3">13.6.2024</div>
+          <!-- col-4 -->
+          <div class="badge badge-success badge-lg self-center place-self-center size-6 p-0.5 shadow-md shadow-success"><Check class="text-success-content size-6" /></div>
+          <!-- col-5 -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn m-1 btn-ghost text-lg">See more <ChevronDown /></div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+          <!-- col-6 -->
+           <a href="/dashboard/domainId" class="btn btn-primary btn-lg min-h-fit h-fit py-3">Inspect</a>
+        </div>
+      </li>
+    </ul>
+  </main>
 </section>
+<footer class="flex justify-center">
+  <div class="join py-8">
+    <button class="join-item btn">1</button>
+  <button class="join-item btn btn-active">2</button>
+  <button class="join-item btn">3</button>
+  <button class="join-item btn">4</button>
+  </div>
+  </footer>
