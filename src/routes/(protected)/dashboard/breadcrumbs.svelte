@@ -25,8 +25,8 @@ import { FileText, LayoutDashboard, Radar } from "lucide-svelte";
            
         
         <li>
-            <span class="inline-flex gap-2 items-center" class:text-primary={$page.route.id === '/(protected)/dashboard/[domainId]/[scanId]'}>
-                <Radar />
+            <span class="inline-flex gap-1 items-center" class:text-primary={$page.route.id === '/(protected)/dashboard/[domainId]/[scanId]'}>
+                <Radar class="size-5"/>
                 {$page.params.scanId}
                 </span>
                 </li>

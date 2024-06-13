@@ -8,7 +8,7 @@
 
 <section class="container">
 <header class="py-6"  >
-    {#if String($page.route.id) !== '/(protected)/dashboard'}
+    {#if $page.params.domainId }
     <Breadcrumbs />
     {/if}
 <h1 class="text-primary text-6xl font-extrabold capitalize">

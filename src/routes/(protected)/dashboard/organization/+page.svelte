@@ -1,0 +1,1 @@
+<p>Lovely dashboard</p>

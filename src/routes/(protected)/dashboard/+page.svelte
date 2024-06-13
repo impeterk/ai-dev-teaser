@@ -7,11 +7,11 @@
 
 <section class="py-8 max-h-full bg-primary-content/60 rounded-xl">
   <header class=" px-4">
-    <nav class="navbar bg-primary rounded-xl shadow-lg grid grid-cols-6 px-4">
+    <nav class="navbar bg-primary rounded-xl shadow-lg grid grid-cols-6 pl-4 pr-6">
       <button class="btn btn-ghost no-animate text-neutral-content text-xl min-h-0">Name</button>
       <button class="btn btn-ghost no-animate text-neutral-content  text-xl min-h-0 col-start-3">Last Scan</button>
       <button class="btn btn-ghost no-animate text-neutral-content  text-xl min-h-0 ">Status</button>
-      <label class="input input-bordered flex items-center gap-2 pl-2 input-md col-start-6 input-sm">
+      <label class="input input-bordered flex items-center gap-2 pl-2  col-start-6 input-sm">
         <Search class="size-5"/>
         <input type="text" placeholder="Search" class="grow" />
       </label>
@@ -29,7 +29,7 @@
           <div class="badge badge-success badge-lg self-center place-self-center size-6 p-0.5 shadow-md shadow-success"><Check class="text-success-content size-6" /></div>
           <!-- col-5 -->
           <div class="dropdown">
-            <div tabindex="0" role="button" class="btn m-1 btn-ghost text-lg">See more <ChevronDown /></div>
+            <div tabindex="0" role="button" class="btn m-1 btn-ghost lg:text-lg">See more <ChevronDown /></div>
             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
               <li><a>Item 1</a></li>
               <li><a>Item 2</a></li>

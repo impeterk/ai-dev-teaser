@@ -1,3 +1,3 @@
-import { writable } from "svelte/store";
+import { writable, type Writable } from "svelte/store";
 
-export const drawer = writable<T>(null)
+export const drawer = writable<HTMLInputElement>()

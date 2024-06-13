@@ -13,6 +13,21 @@ export default {
 	},
 		extend: {}
 	},
-
+	daisyui: {
+		themes: [
+		  {
+			light: {
+			  ...require("daisyui/src/theming/themes")["light"],
+			  success: "#82dd55"
+			},
+			dark: {
+				...require("daisyui/src/theming/themes")["dark"],
+				success: "#82dd55"
+			  },
+		  },
+		],
+	  },
 	plugins: [require('@tailwindcss/typography'), require('daisyui')]
+
+
 } as Config;
